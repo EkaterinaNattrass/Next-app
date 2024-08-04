@@ -9,7 +9,7 @@ export default function Home() {
         <Link href="/breeds">Breeds</Link>
       </div>
       <div>
-        <Link href="/facts">Fun Facts</Link>
+        <Link href="/facts">Fun Facts!</Link>
       </div>
     </Layout>
   );

@@ -17,7 +17,6 @@ export async function getStaticProps() {
     const url = 'https://dogapi.dog/api/v2/breeds';
     const response = await fetch(url);
     const jsonData = await response.json();
-    console.log(jsonData);
     return {
         props: {data: jsonData.data},
     };

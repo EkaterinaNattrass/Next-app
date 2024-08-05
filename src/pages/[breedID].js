@@ -1,7 +1,14 @@
 import {useRouter} from 'next/router';
 
-export default function BreedID() {
+export default function Breed() {
     const router = useRouter();
-    const {breed} = router.query;
-    return <h1>About different breeds</h1>;
+    const {breedID} = router.query;
+    return <h1>Breed details for {breedID}</h1>;
+}
+
+export async function getStaticPaths() {
+    const url = 'https://dogapi.dog/api/v2/breeds/{id}';
+    const response = await fetch(url);
+    const jsonData = await response.json();
+    return { data: jsonData.data};
 }
